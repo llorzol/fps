@@ -1,11 +1,13 @@
 /**
  * Namespace: Main
  *
- * Main is a JavaScript library to provide a set of functions to build
- *  a Federal Priority Streamgages (FPS) Web Site.
+ * Main is a JavaScript library to provide a set of functions to manage
+ *  the web requests.
  *
- * version 1.11
- *  November 30, 2021
+ * $Id: /var/www/html/fps/javascripts/gages/main.js, v 1.46 2026/08/16 09:45:57 llorzol Exp $
+ * $Revision: 1.46 $
+ * $Date: 2026/08/16 09:45:57 $
+ * $Author: llorzol $
 */
 
 /*
@@ -31,381 +33,206 @@
 # DEALINGS IN THE SOFTWARE.
 ###############################################################################
 */
-// Set
+// Prevent jumping to top of page when clicking a href
 //
-var mySiteInfo   = {};
-var mySites      = {};
-var myCenterJson = {};
+jQuery('.noJump a').click(function(event){
+   event.preventDefault();
+});
 
-// Set global variables
+// Global objects
 //
-var district_cd;
-var state_cd;
-var state_nm;
-var state_abbrev;
-var network_type;
+var mySites             = {};
+var mySiteInfo          = {};
+var myFpsInfo           = {};
+var myStates            = {};
 
-var myArea    = null;
-var myNetwork = null;
-var myFunding = null;
-var myMessage = null;
+var myAreaList          = [];
+var myLastArea          = null;
 
-// Build fips code objects
+var process_dt          = '4/3/2025'
+
+// loglevel
 //
-var stateCd2nm          = build_stateCd_to_nm();
-var nm2stateCd          = build_nm_to_stateCd();
-var stateAbbrev2nm      = build_abbrev_to_nm();
-var stateNm2abbrev      = build_nm_to_stateAbbrev();
-
-var myAreaList          = {
-                          };
-
-var myNetworkList       = {
-                           "All" : 'All site types',
-                           "ForecastSites": "Forecast",
-                           "WaterQualitySites": "Water Quality",
-                           "CompactBorderSites": "Compact/Border",
-                           "BasinSites": "Water Availabilty",
-                           "SentinelSites": "Sentinel"
-                          };
-
-var networkTypes        = [
-                           "Forecast",
-                           "Water Quality",
-                           "Compact/Border",
-                           "Water Availabilty",
-                           "Sentinel"
-                          ];
-
-var myFundingList       = {
-                           "All" : 'All funding levels',
-                           "Full" : 'Full FPS funds',
-                           "Partial": "Partial FPS funds",
-                           "None": "No FPS Funds"
-                          };
-
-var fundingTypes        = [
-                           "Full",
-                           "Partial",
-                           "None"
-                          ];
-
-var statusTypes         = [
-                           "Active",
-                           "Inactive"
-                          ];
-
-var agencyUseCodes      = {
-                           "A" : "Active",
-                           "L" : "Active",
-                           "M" : "Active",
-                           "I" : "Inactive",
-                           "R" : "Inactive",
-                           "D" : "Inactive",
-                           "O" : "Inactive",
-                           "U" : "Inactive"
-                          };
+let myLogger = log.getLogger('myLogger');
+//myLogger.setLevel('debug');
+myLogger.setLevel('info');
 
 // Request data
 //
-$(document).ready(function() 
-  {
-   // Loading message
-   //
-   message = "Preparing USGS Federal Priority Streamgages";
-   openModal(message);
-   //console.log(message);
-   
-   // Hide elements
-   //-------------------------------------------------
-   $('#mapUSA').hide();
-   $('.insertMaps').hide();
-   $('.mapState').hide();
-   $('.state-level').hide();
-   $(".printMap").hide();
-   
-   // Check for incoming URL components
-   //-------------------------------------------------
-   state_abbrev  = jQuery.url.param("state_abbrev");
-   console.log("state_abbrev " + state_abbrev);
+$(document).ready(function() {
 
-   state_nm      = jQuery.url.param("state_nm");
-   console.log("state_nm " + state_nm);
-  
-   if(typeof state_abbrev !== "undefined")
-     {
-      console.log("Using state_abbrev ==> " + state_abbrev);
-      if($.isNumeric(state_abbrev))
-        {
-         myArea = stateCd2nm[state_abbrev];
-         console.log("Using state_cd ==> area " + myArea);
-         if(typeof myArea !== "undefined")
-           {
-            console.log("myArea ==> " + myArea);
-            $("button#area").prop("value", myArea);
-            $("button#area").html(myArea + ' <span class="caret"></span>');
-           }
-         else
-           {
-            var message = "Unable to identify your specific state from " +  state_abbrev
-            openModal(message);
-            fadeModal(3000);
-            return false
-           }
-        }
-      else if(state_abbrev.length == 2)
-        {
-         console.log("state_abbrev ==> " + state_abbrev);
-         myArea = stateAbbrev2nm[state_abbrev];
-         if(typeof myArea !== "undefined")
-           {
-            $("button#area").prop("value", myArea);
-            $("button#area").html(myArea + ' <span class="caret"></span>');
-           }
-         else
-           {
-            var message = "Unable to identify your state specific from " +  state_abbrev
-            openModal(message);
-            fadeModal(3000);
-            return false
-           }
-        }
-      else
-        {
-         var message = "Unable to identify your state specific from " +  state_abbrev
-         openModal(message);
-         fadeModal(3000);
-         return false
-        }
-     }
+    // Loading message
+    //
+    message = "Preparing USGS Federal Priority Streamgages";
+    openModal(message);
+    fadeModal(3000);
 
-   else if(typeof state_nm !== "undefined")
-     {
-      console.log("Using state_nm ==> " + state_nm);
-      if($.isNumeric(state_nm))
-        {
-         myArea = stateCd2nm[state_nm];
-         console.log("Using state_nm ==> area " + myArea);
-         if(typeof myArea !== "undefined")
-           {
-            console.log("myArea ==> " + myArea);
-            $("button#area").prop("value", myArea);
-            $("button#area").html(myArea + ' <span class="caret"></span>');
-           }
-         else
-           {
-            var message = "Unable to identify your specific state code from " +  state_nm
-            openModal(message);
-            fadeModal(3000);
-            return false
-           }
-        }
-      else if(state_nm.length > 2)
-        {
-         console.log("state_nm ==> " + state_nm);
-         myArea  = state_nm;
-         myState = stateNm2abbrev[state_nm];
-         console.log("Using state_nm " + state_nm + " ==> " + myArea);
-         if(typeof myState !== "undefined")
-            {
-            $("button#area").prop("value", myArea);
-            $("button#area").html(myArea + ' <span class="caret"></span>');
-           }
-         else
-           {
-            var message = "Unable to identify your state name specific from " +  state_nm
-            openModal(message);
-            fadeModal(3000);
-            return false
-           }
-        }
-      else
-        {
-         var message = "Unable to identify your state name specific from " +  state_nm
-         openModal(message);
-         fadeModal(3000);
-         return false
-        }
-     }
-  
-   else
-     {
-      myArea = 'All states and territories';
-     }
-  
-   network_type = jQuery.url.param("network_type");
-   console.log("network_type " + network_type);
+    // Build ajax requests
+    //
+    const urls = [];
 
-   if(typeof network_type !== "undefined")
-     {
-      console.log("Using network_type ==> " + network_type);
-      if($.isNumeric(network_type))
-        {
-         var message = "Unable to identify your specific state from " +  network_type
-         openModal(message);
-         fadeModal(3000);
-         return false
-        }
-      else if($.inArray(network_type, networkTypes) > -1)
-        {
-         myNetwork  = network_type;
-         console.log("network " + myNetwork);
-         $("button#network").prop("value", myNetwork);
-         $("button#network").html(myNetwork + ' <span class="caret"></span>');
-        }
-      else
-        {
-         var message = "Unable to identify your network specific from " +  network_type
-         openModal(message);
-         fadeModal(3000);
-         return false
-        }
-     }
-  
-   else
-     {
-      myNetwork = 'All site types';
-     }
+    // Request for site information
+    //
+    urls.push("data/CenterInfoMaster.xml");
 
-   funding_level = jQuery.url.param("funding_level");
-   console.log("funding_level " + funding_level);
+    // Request FPS information
+    //
+    urls.push("data/FPSNetwork_mapper.geojson");
 
-   if(typeof funding_level !== "undefined")
-     {
-      console.log("Using funding_level ==> " + funding_level);
-      if($.isNumeric(funding_level_type))
-        {
-         var message = "Unable to identify your specific funding level " +  funding_level
-         openModal(message);
-         fadeModal(3000);
-         return false
-        }
-      else if($.inArray(funding_level, fundingTypes) > -1)
-        {
-         myFunding  = funding_level;
-         console.log("funding " + myFunding);
-         $("button#funding").prop("value", myFunding);
-         $("button#funding").html(myFunding + ' <span class="caret"></span>');
-        }
-      else
-        {
-         var message = "Unable to identify your funding level specific from " +  funding_level_type
-         openModal(message);
-         fadeModal(3000);
-         return false
-        }
-     }
-  
-   else
-     {
-      myFunding = 'All funding levels';
-     }
+    // Request for us and states boundaries information
+    //
+    urls.push("data/states.geojson");
 
-   // Build ajax requests
-   //-------------------------------------------------
-   var webRequests  = [];
+    // Request for us and states boundaries information
+    //
+    urls.push("https://api.waterdata.usgs.gov/ogcapi/v0/collections/states/items?f=json&lang=en-US&sortby=country_code,state_name&filter-lang=cql-text&filter=country_code IN ('US')");
 
-   // Request center information
-   //
-   var request_type = "GET";
-   var script_http  = "data/CenterInfoMaster.xml";
-   var data_http    = "";
-   var dataType     = "xml";
-      
-   // Web request
-   //
-   $.support.cors = true;
-   webRequests.push($.ajax( {
-                             method:   request_type,
-                             url:      script_http, 
-                             data:     data_http, 
-                             dataType: dataType
-   }));
+    // Call the async function
+    //
+    webRequests(urls, 'text', processData)
+});
 
-   // Request site information
-   //
-   var request_type = "GET";
-   var script_http  = "data/FPSSiteMaster.xml";
-   var data_http    = "";
-   var dataType     = "xml";
-      
-   // Web request
-   //
-   $.support.cors = true;
-   webRequests.push($.ajax( {
-                             method:   request_type,
-                             url:      script_http, 
-                             data:     data_http, 
-                             dataType: dataType
-   }));
+function processData([myCenterText, mySitesText, myStatePolygons, myFipsText]) {
+    myLogger.info("processData");
+    myLogger.debug(myCenterText);
+    myLogger.debug(mySitesText);
+    myLogger.debug(myStatePolygons);
+    myLogger.debug('myStateFips', myFipsText);
 
-   // Run ajax requests
-   //
-   $.when.apply($, webRequests).then(function() {
-        //console.log('Responses');
-        //console.log(arguments);
+    // Check for WSC data
+    //
+    if (!myCenterText) {
 
-        // Retrieve center information
+        // Warning message
         //
-        var i = 0;
-        if(arguments.length > i)
-          {
-           var myInfo = arguments[i];
+        message = `No WSC information for Federal Priority Streamgages (FPS) Network Mapper website`;
+        myLogger.error.log(message);
+        updateModal(message);
+        fadeModal(3000);
 
-           if(myInfo[1] === "success")
-             {
-              // Loading message
-              //
-              message = "Processed center information";
-              //console.log(message);
+        return false;
+    }
 
-              myData       = myInfo[0];
-              myJson       = $.xml2json(myData);
-              myCenterJson = myJson['#document']['Centers']['Center'];
-              //console.log(myCenterJson);
-             }
-            else
-             {
-              // Loading message
-              //
-              message = "Failed to load center information";
-              //console.log(message);
-              return false;
-             }
-          }
+    // Processed WSC information
+    //
+    let parser = new DOMParser();
+    let xmlDoc = parser.parseFromString(myCenterText, "text/xml");
+    let myJson = $.xml2json(xmlDoc); // Convert XML to JSON
+    let myCenterData = myJson['#document']['Centers']['Center'];
+    myLogger.debug(myCenterData);
+ 
+    // Check for site data
+    //
+    if (!mySitesText) {
 
-        // Retrieve site information
+        // Warning message
         //
-        i++;
-        if(arguments.length > i)
-          {
-           var myInfo = arguments[i];
+        message = `No site information for Federal Priority Streamgages (FPS) Network Mapper website`;
+        myLogger.error.log(message);
+        updateModal(message);
+        fadeModal(3000);
 
-           if(myInfo[1] === "success")
-             {
-              // Loading message
-              //
-              message = "Processed site information";
-              //console.log(message);
+        return false;
+    }
+    mySiteData = JSON.parse(mySitesText)
+    myLogger.debug('mySiteData',mySiteData);
+    
+    // Check for state boundary layer
+    //
+    if (!myStatePolygons) {
 
-              myData = myInfo[0];
-              myJson = $.xml2json(myData);
-              mySites = myJson['#document']['FPSSites']['FPSSite'];
-              //console.log('mySites');
-              //console.log(mySites);
-             }
-            else
-             {
-              // Loading message
-              //
-              message = "Failed to load site information";
-              //console.log(message);
-              return false;
-             }
-          }
-
-        // Build
+        // Warning message
         //
-        buildMap()
-   });
-  })
+        message = `No state boundary layer information for Federal Priority Streamgages (FPS) Network Mapper website`;
+        myLogger.error.log(message);
+        updateModal(message);
+        fadeModal(3000);
+
+        return false;
+    }
+  
+    // Check for fips data
+    //
+    if (!myFipsText) {
+
+        // Warning message
+        //
+        message = `No FIPS information for Federal Priority Streamgages (FPS) Network Mapper website`;
+        myLogger.error.log(message);
+        updateModal(message);
+        fadeModal(3000);
+
+        return false;
+    }
+    myFipsData = JSON.parse(myFipsText)
+    myLogger.debug('myFipsData',myFipsData);
+
+    // Prepare sites
+    //
+    myFipsData.features.map(feature => {
+    
+        // Build state and territories list
+        //
+        if(feature.properties.state_name !== 'Unspecified') {
+            myAreaList.push(feature.properties.state_name)
+        }
+    });
+    myLogger.debug('myAreaList', myAreaList);
+    
+    // Build area selection in left panel
+    //
+    buildAreaList(myAreaList);
+
+    // Current url
+    //-------------------------------------------------
+    var url = new URL(window.location.href);
+    myLogger.info("Current Url " + window.location.href);
+
+    // Parse
+    //-------------------------------------------------
+    //state_abbrev  = url.searchParams.get('state_abbrev');
+    state_nm      = url.searchParams.get('state_nm');
+    site_type     = url.searchParams.get('site_type');
+    funding_level = url.searchParams.get('funding_level');
+    monitoring_level = url.searchParams.get('monitoring_level');
+    
+    myLogger.info('myArea', state_nm);
+
+    //if(state_abbrev) { state_nm = myFipsCodes[state_postal_code] }
+    if(state_nm) { $('#select-area').val(state_nm); }
+    else { $('#select-area').val('All states and territories'); }
+    if(site_type) { $('#select-sitetype').val(site_type); }
+    else { $('#select-sitetype').val('All site types'); }
+    if(funding_level) { $('#select-funding').val(funding_level); }
+    else { $('#select-funding').val('All funding levels'); }
+    if(monitoring_level) { $('#select-monitoring').val(monitoring_level); }
+    else { $('#select-monitoring').val('Active'); }
+
+    myLastArea = $('#select-area').val();
+
+    // Prepare data
+    //-------------------------------------------------
+    prepareData(mySiteData, myCenterData, myStatePolygons)
+
+}
+
+function saveObjectToFile(obj, filename) {
+  // 1. Convert the object to a formatted JSON string
+  const jsonString = JSON.stringify(obj, null, 2);
+  
+  // 2. Create a Blob containing the JSON string data
+  const blob = new Blob([jsonString], { type: "application/json" });
+  
+  // 3. Create an anchor element to handle the download
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = `${filename}.json`;
+  
+  // 4. Append to body, simulate a click, and remove it
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+  
+  // 5. Clean up the URL object to free up memory
+  URL.revokeObjectURL(link.href);
+}
