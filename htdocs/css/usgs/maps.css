@@ -1,102 +1,366 @@
-/**
- * Namespace: map.css
- *
- * The file popup.css is a css file to providing styling for map features. 
- *
- * version 1.19
- * April 2, 2021
-*/
+<!DOCTYPE html> 
 
-/*
-###############################################################################
-# Copyright (c) Office of Planning and Programming (OPP)
-# 
-# Permission is hereby granted, free of charge, to any person obtaining a
-# copy of this software and associated documentation files (the "Software"),
-# to deal in the Software without restriction, including without limitation
-# the rights to use, copy, modify, merge, publish, distribute, sublicense,
-# and/or sell copies of the Software, and to permit persons to whom the
-# Software is furnished to do so, subject to the following conditions:
-#
-# The above copyright notice and this permission notice shall be included
-# in all copies or substantial portions of the Software.
-#
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-# DEALINGS IN THE SOFTWARE.
-###############################################################################
-*/
+<!-- $Id: /var/www/html/fps/index.html, v 1.12 2026/07/31 07:42:21 llorzol Exp $ -->
+<!-- $Revision: 1.12 $ -->
+<!-- $Date: 2026/07/31 07:42:21 $ -->
+<!-- $Author: llorzol $ -->
 
-.mapState {
-   height: 650px;
-   max-width: 800px;
-   -webkit-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
-   -moz-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
-   box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
-   border: 2px solid #bbbbbb;
-   border-radius: 4px;
-}
-.mapUSA, .map {
-   height: 360px;
-   max-width: 800px;
-   -webkit-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
-   -moz-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
-   box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
-   border: 2px solid #bbbbbb;
-   border-radius: 4px;
-}
-.insertMaps {
-   display: inline-block;
-}
-.mapAlaska, .mapHawaii, .mapGuam, .mapPuertoRico {
-   display: inline-block;
-   height: 200px;
-   width: 230px;
-   -webkit-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
-   -moz-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
-   box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
-   border: 2px solid #bbbbbb;
-   border-radius: 2px;
-   margin-bottom: 10px;
-   margin-left: 0px;
-   margin-right: 0px;
-}
-.noMap {
-   height: 0px !important;
-   width: 0px !important;
-}
-div.funding {
-   padding-left: 10px;
-}
-.full {
-   width: 10px;
-   height: 10px;
-   background: #3443eb;
-}
-.partial {
-   width: 10px;
-   height: 10px;
-   background: #1aff1a;
-}
-.none {
-   background: #b4b6cf;
-}
-.blue {
-   background: blue;
-}
-.black {
-   background: black;
-}
-.red {
-   background: red;
-}
-.orange {
-   background: orange;
-}
-.yellow {
-   background: yellow;
-}
+<html lang="en">
+  <head>
+    <title>Federal Priority Streamgages (FPS) Mapper</title>
+
+    <!-- meta -->
+    <!--#include virtual="includes/meta_inc.html" -->
+
+    <!-- css -->
+    <!--#include virtual="DrupalVisID/includes/meta-css.html" -->
+    <!--#include virtual="includes/css_inc.html" -->
+    <!-- end css -->
+
+  </head>
+
+  <body id="offwhite">
+
+    <!--#include virtual="DrupalVisID/includes/header_WRET.html"-->
+
+    <!-- Container (About Section) -->
+    <div id="about" class="container">
+
+      <!-- Page Heading/Breadcrumbs -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="fs-2 fw-bold text-black mt-2">U.S. Geological Survey</div>
+          <div class="mt-2">
+            <a class= "fs-2 fw-bold text-black link-underline-light" href="https://www.usgs.gov/gwsip">
+              <div>Groundwater and Streamflow Information Program</div>
+            </a>
+          </div>
+          <div class="fs-4 fw-bold text-black mt-2">2024 Federal Priority Streamgages (FPS) Network Mapper</div>
+        </div>
+      </div>
+      <!-- End Page Heading/Breadcrumbs -->             
+
+      <!-- FPS Introduction and More Information-->
+      <div class="row mt-3">
+        <div class="col-sm-9">
+          <p>The <a href="https://www.usgs.gov/mission-areas/water-resources/science/federal-priority-streamgages-fps" target="_blank">
+              Federal Priority Streamgage (FPS) network</a> serves as a backbone of the greater
+            <a href="https://www.usgs.gov/mission-areas/water-resources/science/usgs-national-streamgaging-network" target="_blank">
+              National Streamgage Network</a> to meet ongoing Federal priorities for streamgage data. The network was
+            designed to meet five federal information needs, and 12,396 sites nationally were selected
+            as meeting one or more of these needs, as indicated on this mapper. These sites are eligible
+            for federal funding, as available.
+          </p>
+          <p>The USGS launched an effort to review the FPS network priorities with Federal partners in
+            2022, which culminated in
+            <a href="https://pubs.usgs.gov/of/2023/1032/ofr20231032.pdf" target="_blank">five updated priorities</a>
+            that were released in the spring of 2023.   A new network design based upon these updated priorities
+            was formulated in 2024 and displayed in this mapper.
+          </p>
+          <ul>
+            <li>
+              <b>Water Forecasting and Operations</b>—Supply essential data used for flood alerts, flood
+              and drought forecasts, river navigation, Federal reservoir operation, and assessment and
+              modeling of streamflow conditions to mitigate water hazards and supply shortages and allow
+              science-based decision making by Federal water managers.
+            </li>
+            <li>
+              <b>Boundaries, Compacts, Treaties and Federal lands</b>—Support interstate,
+              international, and tribal border water agreements, compacts, court decrees,
+              treaties and water-use/water-rights management involving Federal lands.
+            </li>
+            <li>
+              <b>Water Budgets</b>—Monitor streamflow in major rivers, and water volume
+              in key receiving waters such as the Great Lakes.
+            </li>
+            <li>
+              <b>Long-Term Hydrologic Trends and Extremes</b>—Monitor long-term
+              streamflow conditions associated with major land uses and ecoregions,
+              including at springs making significant contributions to base flow in
+              streams and in coastal-zone environments impacted by sea-level rise, to
+              identify and track long-term hydrologic trends and support Federal
+              water modeling and management.
+            </li>
+            <li>
+              <b>Water Quality</b>—Support Federal water-quality assessments of
+              major rivers and estuaries, public-health risk assessment and warning
+              relating to impaired streams and ecosystem health management on Federal
+              lands.
+            </li>
+          </ul>
+          <p>
+	    This mapper depicts locations, primary information goals, and funding
+	    characteristics of the FPS network. Views can be selected for each State,
+	    and for specific federal priorities or funding characteristics.  The
+	    total active number of sites in the table header below represents currently
+	    active stations and may vary over time as part of normal network operations.
+          </p>
+          <p>
+            Visit the <a href="https://www.usgs.gov/mission-areas/water-resources/science/national-water-monitoring-network" target="_blank">USGS National Water Monitoring Network</a> for more information.
+          </p>
+          <p>
+            Vist the <a href="https://water.usgs.gov/networks/fps_2000_archive/index.html" target="_blank">2000 FPS page</a>
+            to see previous FPS network.
+          </p>
+
+        </div>
+
+        <div class="col-sm-3 mt-3">
+
+          <div class="card national-level">
+            <div class="card-body">
+              <div class="card-title text-bg-dark text-center fw-bold rounded-top ps-1 py-2">For More Information</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><a href="https://www.usgs.gov/staff-profiles/chad-r-wagner">Chad R Wagner</a><br> Program Coordinator<br>Groundwater and Streamflow Information Program<br>National Water Quality Program<br>Email: <a href="mailto:cwagner@usgs.gov">cwagner@usgs.gov</a><br>Phone: 919-571-4021</li>
+                  <li class="list-group-item"><a href="https://www.usgs.gov/staff-profiles/nicholas-stasulis">Nicholas Stasulis</a><br> Supervisory Physical Scientist<br>New England Water Science Center<br>Email: <a href="mailto:nstasuli@usgs">nstasuli@usgs.gov</a><br>Phone: 207-446-4335</li>
+                  <li class="list-group-item"><a href="https://www.usgs.gov/staff-profiles/robert-r-lotspeich">Robert R. Lotspeich</a><br> Hydrologist<br>Water Resources Mission Area<br>Email: <a href="mailto:rlotspei@usgs.gov">rlotspei@usgs.gov</a></li>
+                  <li class="list-group-item">For general USGS questions, <a href="/contact/gsanswers?pemail=ask" title="Go to online feedback form">contact Ask USGS online</a> or call 1-888-ASK-USGS (1-888-275-8747).</li>
+                </ul>
+            </div>
+          </div>
+
+          <div class="card state-level" style="display:none;">
+            <div class="card-header bg-secondary">For More Information</div>
+            <div class="card-body">
+              <div class="card-title">
+                <span class="bold"><a id="contactEmail"><span id="contactName"></span></a></span>
+              </div>
+              <p class="card-text">
+                FPS Coordinator for the <span id="stateName"></span> <span id="contactPhoneNumber"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End of FPS Introduction and More Information-->
+
+      <!-- DATA EXPLORATION TOOL and Maps-->
+      <div class="row mt-3">
+        <div class="col-sm-12" id="links">
+
+          <div class="row">
+            <div class="col-sm-3 left_panel">
+
+              <div class="text-bg-dark fw-bold fs-6 text-start rounded-top ps-1 py-2">DATA EXPLORATION TOOL</div>
+
+              <div class="text-bg-secondary fw-bold fs-6 text-start rounded-top mt-2 ps-1 py-1">States and Territories</div>
+              <div class="area-selection">
+                <select id="select-area" class="form-select">
+                  <option value="All states and territories">All states and territories</option>
+                </select>
+              </div>
+
+              <div class="text-bg-secondary fw-bold fs-6 text-start rounded-top mt-2 ps-1 py-2">Site Types</div>
+              <div class="sitetype-selection">
+                <select id="select-sitetype" class="form-select">
+                  <option value="All site types">All site types</option>
+                  <option value="Water Forecasting and Operations">Water Forecasting and Operations</option>
+                  <option value="Long-Term Hydrologic Trends and Extremes">Long-Term Hydrologic Trends and Extremes</option>
+                  <option value="Boundaries, Compacts, Treaties and Federal Lands">Boundaries, Compacts, Treaties and Federal Lands</option>
+                  <option value="Water Budgets">Water Budgets</option>
+                  <option value="Water Quality">Water Quality</option>
+                </select>
+              </div>
+
+              <div class="text-bg-secondary fw-bold fs-6 text-start rounded-top mt-2 ps-1 py-2">Funding Level</div>
+              <div class="funding-selection">
+                <select id="select-funding" class="form-select">
+                  <option value="All funding levels" selected="selected">All funding levels</option>
+                  <option value="Full FPS funds">Full FPS funds</option>
+                  <option value="Partial FPS funds">Partial FPS funds</option>
+                  <option value="No FPS Funds">No FPS Funds</option>
+                </select>
+              </div>
+
+              <div class="text-bg-secondary fw-bold fs-6 text-start rounded-top mt-2 ps-1 py-2">Monitoring Levels</div>
+              <div class="monitoring-selection">
+                <select id="select-monitoring" class="form-select">
+                  <option value="All monitoring levels">All Monitoring Levels</option>
+                  <option value="Active">All active sites</option>
+                  <option value="Inactive">All inactive sites</option>
+                </select>
+              </div>
+
+              <div id="legend" class="text-start fs-6 mt-3">
+                <div class="fw-bold">Map Legend</div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item border-0">
+                    <div><img alt="Water Forecasting and Operations site" width="10" class="me-2" src="Symbols/Black-Circle.svg">Water Forecasting and<br>Operations site</div>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <div><img alt="Long-Term Hydrologic Trends and Extremes site" width="10" class="me-2" src="Symbols/Black-Square.svg">Long-Term Hydrologic<br>Trends and Extremes site</div>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <div><img alt="Boundaries, Compacts, Treaties and Federal Lands site" width="10" class="me-2" src="Symbols/Black-Diamond.svg">Boundaries, Compacts,<br>Treaties and Federal Lands site</div>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <div><img alt="Water Budgets site" width="10" class="me-2" src="Symbols/Black-Triangle.svg">Water Budgets site</div>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <div><img alt="Water Quality site" width="10" class="me-2" src="Symbols/Black-UTriangle.svg">Water Quality site</div>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <div><img alt="Two or more of the above site types" width="10" class="me-2" src="Symbols/Black-Star.svg">Two or more of the above site types</div>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <div><span style="background-color: #0072B2;">&nbsp;&nbsp;</span><span class="ms-2">Full FPS funds</span></div>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <div><span style="background-color: #FE6100;">&nbsp;&nbsp;</span><span class="ms-2">Partial FPS funds</span></div>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <div><span style="background-color: #FFB000;">&nbsp;&nbsp;</span><span class="ms-2">No FPS funds</span></div>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <div><span style="background-color: #D3D3D3;">&nbsp;&nbsp;</span><span class="ms-2">Inactive site</span></div>
+                  </li>
+                </ul>
+              </div>
+            </div> <!-- End Left Data Exploration -->
+
+            <!-- Right panel with maps -->
+            <div class="col-sm-9">
+              <div class="row">
+                <!-- Start Leaflet Map object -->
+                <div id="maps">
+                  <div id="mapState" class="mapState border border-dark border-2 rounded shadow"></div>
+                  <div id="mapUSA" class="mapUSA clickMaps border border-dark border-2 rounded shadow mb-1" style="display:none;"></div>
+                  <span class="insertMaps" style="display:none;">
+                    <span id="mapAlaska" class="mapAlaska clickMaps border border-dark border-2 rounded shadow me-1"></span>
+                    <span id="mapHawaii" class="mapHawaii clickMaps border border-dark border-2 rounded shadow me-1"></span>
+                    <span id="mapPuertoRico" class="mapPuertoRico clickMaps border border-dark border-2 rounded shadow"></span>
+                  </span>
+                </div>
+              </div>
+              <!-- End Leaflet Map object -->
+
+              <!-- Count Summary of Sites -->
+              <div class="row mt-3 mb-3">
+                <div class="col-6">
+                  <div class="mt-3">
+                    <table id="countsTable"  class="table table-striped-columns border-2">
+                      <caption class="caption-top text-center fw-bold fs-5">
+                        USGS Federal Priorities Streamgage Status & Federal Needs -- Selected sites can meet more than one Federal need
+                      </caption>
+                      <thead class="table-light text-start">
+                        <tr scope="row">
+                          <th scope="col" class="text-start">Site Type</th>
+                          <th scope="col" class="text-center">Active</th>
+                          <th scope="col" class="text-center">Inactive</th>
+                          <th scope="col" class="text-center">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody class="fs-6">
+                        <tr scope="row">
+                          <td scope="col" class="symbols text-start text-nowrap pe-1">
+                            <span class="me-2"><img alt="Water Forecasting and Operations gage" src="Symbols/Black-Circle.svg"></span>
+                            Water Forecasting and Operations
+                          </td>
+                          <td scope="col" class="text-end pe-1"><span id="ActiveWaterForecastingandOperations"></span></td>
+                          <td scope="col" class="text-end pe-1"><span id="InactiveWaterForecastingandOperations"></span></td>
+                          <td scope="col" class="text-end pe-1"><span id="TotalWaterForecastingandOperations"></span></td>
+                        </tr>
+                        <tr scope="row">
+                          <td scope="col" class="symbols text-start text-nowrap">
+                            <span class="me-2"><img alt="Long-Term Hydrologic Trends and Extremes gage" src="Symbols/Black-Square.svg"></span>
+                            Long-Term Hydrologic Trends and Extremes
+                          </td>
+                          <td scope="col" class="text-end"><span id="ActiveLong-TermHydrologicTrendsandExtremes"></span></td>
+                          <td scope="col" class="text-end"><span id="InactiveLong-TermHydrologicTrendsandExtremes"></span></td>
+                          <td scope="col" class="text-end"><span id="TotalLong-TermHydrologicTrendsandExtremes"></span></td>
+                        </tr>
+                        <tr scope="row">
+                          <td scope="col" class="symbols text-start text-nowrap">
+                            <span class="me-2"><img alt="Boundaries, Compacts, Treaties and Federal Lands gage" src="Symbols/Black-Diamond.svg"></span>
+                            Boundaries, Compacts, Treaties and Federal Lands
+                          </td>
+                          <td scope="col" class="text-end"><span id="ActiveBoundariesCompactsTreatiesandFederalLands"></span></td>
+                          <td scope="col" class="text-end"><span id="InactiveBoundariesCompactsTreatiesandFederalLands"></span></td>
+                          <td scope="col" class="text-end"><span id="TotalBoundariesCompactsTreatiesandFederalLands"></span></td>
+                        </tr>
+                        <tr scope="row">
+                          <td scope="col" class="symbols text-start text-nowrap">
+                            <span class="me-2"><img alt="Water Budgets gage" src="Symbols/Black-Triangle.svg"></span>
+                            Water Budgets
+                          </td>
+                          <td scope="col" class="text-end"><span id="ActiveWaterBudgets"></span></td>
+                          <td scope="col" class="text-end"><span id="InactiveWaterBudgets"></span></td>
+                          <td scope="col" class="text-end"><span id="TotalWaterBudgets"></span></td>
+                        </tr>
+                        <tr scope="row">
+                          <td scope="col" class="symbols text-start text-nowrap">
+                            <span class="me-2"><img alt="Water Quality gage" src="Symbols/Black-UTriangle.svg"></span>
+                            Water Quality
+                          </td>
+                          <td scope="col" class="text-end"><span id="ActiveWaterQuality"></span></td>
+                          <td scope="col" class="text-end"><span id="InactiveWaterQuality"></span></td>
+                          <td scope="col" class="text-end"><span id="TotalWaterQuality"></span></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> <!-- End Right panel with maps -->
+        </div>
+      </div>
+      <!-- End of DATA EXPLORATION TOOL and Maps-->
+
+      <!-- Start sites table -->
+      <div class="row">
+        <div class="col-sm-12" id="links">
+          <div id="siteTable" class="mt-2"></div>
+        </div>
+      </div><!--sites table-->
+
+    </div> <!-- <div class="container-fluid"> -->
+
+      <!--#include virtual="DrupalVisID/includes/footer_WRET.html"-->
+
+      <!-- Supporting scripts  -->
+      <script src="javascripts/required/jquery.min.js"></script>
+      <script src="javascripts/required/bootstrap.bundle.min.js"></script>
+      <link href="css/required/bootstrap.min.css" rel="stylesheet">
+
+      <script src="javascripts/required/leaflet.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/required/leaflet.css">
+
+      <!-- For responsive popup -->
+      <script src="javascripts/required/leaflet.responsive.popup.js"></script>
+      <link rel="stylesheet" href="css/required/leaflet.responsive.popup.css">
+
+      <script src="javascripts/required/jquery.xml2json.js"></script>
+
+      <!-- Home feature  -->
+      <link rel="stylesheet" href="zoombar/L.Control.ZoomBar.css">
+      <script src="zoombar/L.Control.ZoomBar.js"></script>
+
+      <!-- Supporting scripts -->
+      <!-- <script src="javascripts/required/leaflet.browser.print.min.js"></script>  -->
+
+      <!-- Supporting local scripts  -->
+      <script src="javascripts/required/jquery.dataTables.min.js"></script>
+      <script src="javascripts/required/dataTables.bootstrap5.min.js"></script>
+      <link rel="stylesheet" href="css/required/dataTables.bootstrap5.min.css">
+      <script src="javascripts/required/dataTables.buttons.min.js"></script>
+      <link rel="stylesheet" href="css/required/buttons.dataTables.min.css">
+      <script src="javascripts/required/jszip.min.js"></script>
+      <script src="javascripts/required/pdfmake.min.js"></script>
+      <script src="javascripts/required/vfs_fonts.js"></script>
+      <script src="javascripts/required/buttons.html5.min.js"></script>
+      <script src="javascripts/required/buttons.print.min.js"></script>
+
+      <!-- log4js -->
+      <script src="javascripts/required/loglevel.min.js"></script>
+
+      <!-- Local scripts -->
+      <script src="javascripts/gages/modal.js"></script>
+      <script src="javascripts/gages/datatablesSupport.js"></script>
+      <script src="javascripts/gages/popup.js"></script>
+      <script src="javascripts/gages/webRequest.js"></script>
+      <script src="javascripts/gages/leftPanel.js"></script>
+      <script src="javascripts/gages/map_gages.js"></script>
+      <script src="javascripts/gages/main.js"></script>
+  </body>
+</html>
