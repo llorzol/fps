@@ -4,6 +4,10 @@
  * datatablesSupport is a JavaScript library to provide a set of functions to build
  *  a table with buttons to export table content.
  *
+ * $Id: /var/www/html/fps/javascripts/gages/datatablesSupport.js, v 1.68 2026/07/19 18:10:33 llorzol Exp $
+ * $Revision: 1.68 $
+ * $Date: 2026/07/19 18:10:33 $
+ * $Author: llorzol $
 */
 
 /*
@@ -33,7 +37,7 @@
 //let discontinuedRed = new RegExp(/[<img src="Symbols/Red-Triangle.gif">]/);
                    //data.replace( /(^<img)\s+(\w+)Green-Triangle.gif(\w+)/, 'X' ) :
 
-var excelButton = 
+var te_excelButton = 
   {
    exportOptions: {
        format: {
@@ -51,8 +55,8 @@ var excelButton =
 
                // Strip img tag
                //
-               //var data = column > 2 || column < 7 ? data.replace( /<img src="Symbols\/\w+\W\w+.gif">/, 'Yes' ) : data;
-               var data = column > 2 || column < 7 ? data.replace( /<img src="Symbols[^>]+>/, 'Yes' ) : data;
+               var data = column === 0 ? data.replace( /<img .*?>/, '' ) : data;
+               var data = column === 0 ? data.replace( /&nbsp;/, '' ) : data;
 
                return data;
          }
@@ -68,9 +72,8 @@ var excelButtonSave =
 
                // Strip img tag
                //
-               return column > 2 || column < 7 ?
-                   data.replace( /<img src="Symbols[^>]+>/, 'Yes' ) :
-                   // data.replace( /<img src="Symbols\/\w+\W\w+.gif">/, 'Yes' ) :
+               return column == 0 ?
+                   data.replace( /<img src="\.\/\w+\/\w+.png">/, '' ) :
                    data;
          }
        }
@@ -95,7 +98,193 @@ var printButton =
 //    https://docs.sheetjs.com/
 //    http://officeopenxml.com/SSstyles.php
 //
-function fpsDataTable (tableSelector, myTitle, excelFileName) 
+function te_DataTable (tableSelector, myTitle, excelFileName) 
+  {
+     // TableSorter - New Version with Fixed Headers
+     //-------------------------------------------------
+     jQuery(tableSelector).DataTable( {
+         rowGroup: {dataSrc: 1 },
+        "paging":    false,
+         scrollCollapse: true,
+         scrollX: true,
+         scrollY: '40vh',
+        "ordering":  true,
+        //"info":      false,
+        //"searching": false,
+        "autoWidth": true,
+        "stripeClasses": [],
+        "bAutoWidth": false,
+        "order": [[0, 'asc' ]],
+        dom: 'Bfrtip',
+        buttons: [
+            $.extend( true, {}, te_excelButton, {
+                extend: 'excelHtml5',
+                text: 'Excel',
+                sheetName: "FPS",
+                messageTop: myTitle,
+                title: '',
+                filename: excelFileName,
+                exportOptions: { columns: [0, 1, 2, 3, 4, 5, 7, 8],
+                                 rows: ':visible',
+                                 format: {
+                                     body: function (data, row, column, node) {
+                                         let div = document.createElement('div');
+                                         div.innerHTML = data;
+
+                                         // Find and use regex to extract the URL and the display text
+                                         //
+                                         if (data && data.toLowerCase().includes('<a ')) {
+                                             const hrefMatch = data.match(/href=["']([^"']*)["']/);
+                                             const textMatch = data.match(/>([^<]*)</);
+
+                                             if (hrefMatch && textMatch) {
+                                                 const url = hrefMatch[1];
+                                                 const text = textMatch[1];
+
+                                                 // Step 3: Return it structured as an Excel formula
+                                                 return `=HYPERLINK("${url}", "${text}")`;
+                                             }
+                                         }
+
+                                         // Check if the cell has href
+                                         //
+                                         if (div.querySelector('a')) {
+                                             var linkUrl = div.attr('data-url');
+                                             var cellText = div.text();
+                                             //myLogger.info('Selected', linkUrl, cellText);
+                                             div.innerHTML = 'Yes';
+                                             return div.innerHTML;
+                                         }
+
+                                         // Check if the cell has an image
+                                         //
+                                         if (div.querySelector('img')) {
+                                             div.querySelector('img').remove();
+                                             div.innerHTML = 'Yes';
+                                             return div.innerHTML;
+                                         }
+                                             
+                                         return data;
+                                     }}
+                               },
+                customize: function ( xlsx ) {
+                    var sheet = xlsx.xl.worksheets['sheet1.xml'];
+
+                    // Highlight table caption
+                    //
+                    $('row:first c', sheet).attr( 's', '42' );
+ 
+                    // Left justify column A for all rows except row 1
+                    //  [not working ??]
+                    //
+                    $('row:gt(0) c[r="A"]', sheet).attr( 's', '50' );
+ 
+                    // Set column A to text for all rows except row 1
+                    //
+                    $('row:gt(0) c[r="A"]', sheet).attr( 's', '0' );
+                }
+            } ),
+            $.extend( true, {}, printButton, {
+                extend: 'print',
+                title: myTitle,
+                autoPrint: false,
+                customize: function (doc) {
+                    // Change font size of the entire print window body
+                    $(doc.document.body).css('font-size', '10pt');
+                    $(doc.document.body).find('h1').css('font-size', '15pt');
+                    $(doc.document.body).find('h1').css('text-align', 'center'); 
+                    $(doc.document.body).find('div').text(''); 
+
+                    // Change font size of the table specifically and make it compact
+                    $(doc.document.body).find('table').css('font-size', '8pt');
+                    $(doc.document.body).find('th').css('font-size', '14pt');
+                    $(doc.document.body).find('tr').css('font-size', '10pt');
+                }
+            } ),
+            {
+                extend: 'pdfHtml5',
+                orientation: 'landscape',
+                pageSize: 'A4',        // Expands page area (also try 'A3' or 'TABLOID')
+                messageTop: myTitle,
+                autoPrint: false,
+                exportOptions: {
+                    columns: [0, 1, 2, 3, 4, 5, 6, 7, 8],
+                    rows: ':visible',
+                    format: {
+                        body: function (data, row, column, node) {
+                            let div = document.createElement('div');
+                            div.innerHTML = data;
+
+                            // Check if the cell has an image
+                            //
+                            if (div.querySelector('img')) {
+                                div.querySelector('img').remove();
+                                div.innerHTML = 'Yes';
+                                return div.innerHTML;
+                            }
+
+                            // Check if the cell has href
+                            //
+                            if (div.querySelector('a')) {
+                                //var linkUrl = div.attr('data-url');
+                                //var cellText = div.text();
+                                //myLogger.info('Selected', div.innerText);
+                                //div.innerHTML = cellText;
+                                return div.innerText;
+                            }
+
+                            return data;
+                        }}
+                },
+                customize: function (doc) {
+                    // 1. Reduce font size to fit more data
+                    doc.defaultStyle.fontSize = 8;
+                    doc.styles.tableHeader.fontSize = 8;
+
+                    // 2. Adjust margins to maximize printable area
+                    //doc.pageMargins = [ 10, 10, 10, 10 ];
+
+                    myLogger.info('Selected', doc);
+
+                    // 3. Force the table to stretch exactly 100% of the page width
+                    var colCount = doc.content[2].table.body[0].length;
+                    doc.content[2].table.widths = Array(colCount).fill('auto');
+                    //var tbl = doc.content.find(item => item.table);
+
+                    //if (tbl) {
+                        // Extract the exact number of columns included in the PDF matrix
+                        //var colCount = tbl.table.body[0].length;
+                        //console.log("Exported columns:", colCount);
+
+                        // Example: Automatically set equal widths based on column count
+                        //tbl.table.widths = Array(colCount + 1).join('*').split('');
+                    //}
+                }
+            },
+            {
+                text: 'Geojson',
+                autoPrint: true,
+                action: function ( e, dt, node, config ) {
+                    message = 'Exporting sites in geojson format';
+                    openModal(message);
+                    fadeModal(3000);
+                    var file = 'Federal-Priority-Streamgages.geojson';
+                      saveAs(new File([JSON.stringify(myGeoJson)], file, {
+                        type: "text/plain;charset=utf-8"
+                      }), file);
+                }
+            }
+        ]
+     });
+  }
+
+// Describes Excel structure
+//
+//    https://datatables.net/reference/button/excelHtml5#Customisation
+//    https://docs.sheetjs.com/
+//    http://officeopenxml.com/SSstyles.php
+//
+function te_DataTableSave (tableSelector, myTitle, excelFileName) 
   {
      console.log("datatablesInit " + jQuery(tableSelector).length);
 
@@ -108,16 +297,19 @@ function fpsDataTable (tableSelector, myTitle, excelFileName)
         "searching": false,
         "autoWidth": true,
         "stripeClasses": [],
-        "fixedHeader": { header: true, footer: false },
+        "fixedHeader": { header: true, footer: false, headerOffset: $('#fixed').height() },
+//        "columnDefs": [
+//            { "type": "html", "targets": 0 }
+//        ],
         dom: 'Bfrtip',
-        "order": [[0, 'asc' ]],
+        "order": [[1, 'asc' ],[2, 'asc' ]],
         buttons: [
-            $.extend( true, {}, excelButton, {
+            $.extend( true, {}, te_excelButton, {
                 extend: 'excelHtml5',
-                exportOptions: { columns: [0, 1, 2, 3, 4, 5, 6, 7, 8] },
+                exportOptions: { columns: [0, 1, 2, 3, 4, 5, 7] },
                 title: '',
                 messageTop: myTitle,
-                sheetName: "FPS",
+                sheetName: "T&E",
                 filename: excelFileName,
                 customize: function ( xlsx ) {
                     var sheet = xlsx.xl.worksheets['sheet1.xml'];
