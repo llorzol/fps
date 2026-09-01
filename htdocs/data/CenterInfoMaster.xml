@@ -1,0 +1,599 @@
+<Centers>
+  <Center>
+    <CenterCode>NK</CenterCode>
+    <CenterName>Upper Midwest Water Science Center</CenterName>
+    <Address>1 Gifford Pinchot Drive</Address>
+    <City>Madison</City>
+    <State>WI</State>
+    <ZipCode>53726</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>NK</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Robert</FirstName>
+        <LastName>Waschbusch</LastName>
+        <Email>rjwaschb@usgs.gov</Email>
+        <Address>One Gifford Pinchot Drive</Address>
+        <State>WI</State>
+        <ZipCode>53726</ZipCode>
+        <PhoneWork>608-821-3868</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>NR</CenterCode>
+    <CenterName>Nebraska Water Science Center</CenterName>
+    <Address>5231 S. 19th St.</Address>
+    <City>Lincoln</City>
+    <State>NE</State>
+    <ZipCode>68512</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>NR</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Jason</FirstName>
+        <LastName>Lambrecht</LastName>
+        <Email>jmlambre@usgs.gov</Email>
+        <Address>5231 South 19th</Address>
+        <State>NE</State>
+        <ZipCode>68512</ZipCode>
+        <PhoneWork>402-328-4124</PhoneWork>
+        <PhoneMobile>402-416-2363</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>NT</CenterCode>
+    <CenterName>Dakota Water Science Center</CenterName>
+    <Address>1608 Mountain View Rd</Address>
+    <City>Rapid City</City>
+    <State>SD</State>
+    <ZipCode>57702</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>NT</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Steven</FirstName>
+        <LastName>Fuller</LastName>
+        <Email>smfuller@usgs.gov</Email>
+        <Address>1608 Mountain View Road</Address>
+        <State>SD</State>
+        <ZipCode>57702</ZipCode>
+        <PhoneWork>605-394-3223</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>MC</CenterCode>
+    <CenterName>Caribbean-Florida Water Science Center</CenterName>
+    <Address>4446 Pet Ln Suite #108</Address>
+    <City>Lutz</City>
+    <State>FL</State>
+    <ZipCode>33559</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>MC</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Kevin</FirstName>
+        <LastName>Grimsley</LastName>
+        <Email>kjgrims@usgs.gov</Email>
+        <Address>4446 Pet Lane, Suite 108</Address>
+        <State>FL</State>
+        <ZipCode>33559</ZipCode>
+        <PhoneWork>813-498-5064</PhoneWork>
+        <PhoneMobile>813-267-2321</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>ML</CenterCode>
+    <CenterName>Lower Mississippi-Gulf Water Science Center</CenterName>
+    <Address>640 Grassmere Park, Suite 100</Address>
+    <City>Nashville</City>
+    <State>TN</State>
+    <ZipCode>37211</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>ML</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Shannon</FirstName>
+        <LastName>Williams</LastName>
+        <Email>swilliam@usgs.gov</Email>
+        <Address>640 Grassmere Park</Address>
+        <State>TN</State>
+        <ZipCode>37211</ZipCode>
+        <PhoneWork>615-837-4755</PhoneWork>
+        <PhoneMobile>615-390-3282</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>NE</CenterCode>
+    <CenterName>Central Midwest Water Science Center</CenterName>
+    <Address>405 N. Goodwin Ave.</Address>
+    <City>Urbana</City>
+    <State>IL</State>
+    <ZipCode>61801</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>NE</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Jonathan</FirstName>
+        <LastName>Lageman</LastName>
+        <Email>jlageman@usgs.gov</Email>
+        <Address>650 G Peace Road</Address>
+        <State>IL</State>
+        <ZipCode>60115</ZipCode>
+        <PhoneWork>815-752-2035</PhoneWork>
+        <PhoneMobile>815-901-5530</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>NF</CenterCode>
+    <CenterName>OKI Water Science Center</CenterName>
+    <Address>5957 Lakeside Blvd</Address>
+    <City>Indianapolis</City>
+    <State>IN</State>
+    <ZipCode>46278</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>NF</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Jeffrey</FirstName>
+        <LastName>Woods</LastName>
+        <Email>jwoods@usgs.gov</Email>
+        <Address>5957 Lakeside Blvd.</Address>
+        <State>IN</State>
+        <ZipCode>46278</ZipCode>
+        <PhoneWork>317-430-3086</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>RS</CenterCode>
+    <CenterName>Wyoming-Montana Water Science Center</CenterName>
+    <Address>3162 Bozeman Ave</Address>
+    <City>Helena</City>
+    <State>MT</State>
+    <ZipCode>59601</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>RS</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Brian</FirstName>
+        <LastName>Loving</LastName>
+        <Email>bloving@usgs.gov</Email>
+        <Address>521 Progress Circle, Suite 6</Address>
+        <State>WY</State>
+        <ZipCode>82007-9660</ZipCode>
+        <PhoneWork>307-775-9174</PhoneWork>
+        <PhoneMobile>307-630-0782</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>YE</CenterCode>
+    <CenterName>Idaho Water Science Center</CenterName>
+    <Address>230 Collins Road</Address>
+    <City>Boise</City>
+    <State>ID</State>
+    <ZipCode>83702-4520</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>YE</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>David</FirstName>
+        <LastName>Evetts</LastName>
+        <Email>devetts@usgs.gov</Email>
+        <Address>230 Collins Road</Address>
+        <State>ID</State>
+        <ZipCode>83702</ZipCode>
+        <PhoneWork>208-387-1316</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>YF</CenterCode>
+    <CenterName>Oregon Water Science Center</CenterName>
+    <Address>601 SW 2nd Avenue, Suite 1950</Address>
+    <City>Portland</City>
+    <State>OR</State>
+    <ZipCode>97204</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>YF</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Marc</FirstName>
+        <LastName>Stewart</LastName>
+        <Email>mastewar@usgs.gov</Email>
+        <Address>4890 North Runway Drive</Address>
+        <State>OR</State>
+        <ZipCode>97502</ZipCode>
+        <PhoneWork>541-776-4258</PhoneWork>
+        <PhoneMobile>541-840-6525</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>YG</CenterCode>
+    <CenterName>Washington Water Science Center</CenterName>
+    <Address>934 Broadway St, Ste 300</Address>
+    <City>Tacoma</City>
+    <State>WA</State>
+    <ZipCode>98402</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>YG</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Christopher</FirstName>
+        <LastName>Laveau</LastName>
+        <Email>cdlaveau@usgs.gov</Email>
+        <Address>934 Broadway, Suite 300</Address>
+        <State>WA</State>
+        <ZipCode>98402</ZipCode>
+        <PhoneWork>253-552-1608</PhoneWork>
+        <PhoneMobile>701-213-8694</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>LG</CenterCode>
+    <CenterName>New England Water Science Center</CenterName>
+    <Address>10 Bearfoot Rd</Address>
+    <City>Northborough</City>
+    <State>MA</State>
+    <ZipCode>01532</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>LG</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Gregory</FirstName>
+        <LastName>Stewart</LastName>
+        <Email>gstewart@usgs.gov</Email>
+        <Address>196 Whitten Rd.</Address>
+        <State>ME</State>
+        <ZipCode>04330</ZipCode>
+        <PhoneWork>207-626-6618</PhoneWork>
+        <PhoneMobile>207-215-0735</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>LJ</CenterCode>
+    <CenterName>New Jersey Water Science Center</CenterName>
+    <Address>3450 Princeton Pike, Suite 110</Address>
+    <City>Lawrenceville</City>
+    <State>NJ</State>
+    <ZipCode>08648</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>LJ</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Heidi</FirstName>
+        <LastName>Hoppe</LastName>
+        <Email>hhoppe@usgs.gov</Email>
+        <Address>3450 Princeton Pike, Suite 110</Address>
+        <State>NJ</State>
+        <ZipCode>08648</ZipCode>
+        <PhoneWork>609-771-3980</PhoneWork>
+        <PhoneMobile>609-273-8996</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>LK</CenterCode>
+    <CenterName>New York Water Science Center</CenterName>
+    <Address>425 Jordan Rd</Address>
+    <City>Troy</City>
+    <State>NY</State>
+    <ZipCode>12180</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>LK</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>LL</CenterCode>
+    <CenterName>Pennsylvania Water Science Center</CenterName>
+    <Address>215 Limekiln Road</Address>
+    <City>New Cumberland</City>
+    <State>PA</State>
+    <ZipCode>17070</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>LL</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Albert (Tom)</FirstName>
+        <LastName>Ruby</LastName>
+        <Email>aruby@usgs.gov</Email>
+        <Address>215 Limekiln Road</Address>
+        <State>PA</State>
+        <ZipCode>17070</ZipCode>
+        <PhoneWork>717-730-6921</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>LM</CenterCode>
+    <CenterName>VA/WV Water Science Center</CenterName>
+    <Address>1730 E. Parham Rd.</Address>
+    <City>Richmond</City>
+    <State>VA</State>
+    <ZipCode>23228</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>LM</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Shaun</FirstName>
+        <LastName>Wicklein</LastName>
+        <Email>smwickle@usgs.gov</Email>
+        <Address>1730 East Parham Road</Address>
+        <State>VA</State>
+        <ZipCode>23228</ZipCode>
+        <PhoneWork>804-261-2605</PhoneWork>
+        <PhoneMobile>804-399-9929</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>WB5</CenterCode>
+    <CenterName>Alaska Science Center Water</CenterName>
+    <Address>4210 University Drive</Address>
+    <City>Anchorage</City>
+    <State>AK</State>
+    <ZipCode>99508</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>WB5</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Jeff</FirstName>
+        <LastName>Conaway</LastName>
+        <Email>jconaway@usgs.gov</Email>
+        <Address>4210 University Drive</Address>
+        <State>AK</State>
+        <ZipCode>99508</ZipCode>
+        <PhoneWork>907-786-7041</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>ZG</CenterCode>
+    <CenterName>California Water Science Center</CenterName>
+    <Address>6000 J Street, Placer Hall</Address>
+    <City>Sacramento</City>
+    <State>CA</State>
+    <ZipCode>95819</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>ZG</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Mark</FirstName>
+        <LastName>Dickman</LastName>
+        <Email>mdickman@usgs.gov</Email>
+        <Address>6000 J Street - Placer Hall Sacramento, CA 95819</Address>
+        <State>CA</State>
+        <ZipCode>95819</ZipCode>
+        <PhoneWork>916-278-9111</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>ZJ</CenterCode>
+    <CenterName>Nevada Water Science Center</CenterName>
+    <Address>2730 N Deer Run Rd., Suite 3</Address>
+    <City>Carson City</City>
+    <State>NV</State>
+    <ZipCode>89701</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>ZJ</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Megan</FirstName>
+        <LastName>Poff</LastName>
+        <Email>mpoff@usgs.gov</Email>
+        <Address>500 Date Street</Address>
+        <State>NV</State>
+        <ZipCode>89005</ZipCode>
+        <PhoneWork>702-294-6043</PhoneWork>
+        <PhoneMobile>702-595-6837</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>RE</CenterCode>
+    <CenterName>Colorado Water Science Center</CenterName>
+    <Address>P.O. Box 25046, MS-415</Address>
+    <City>Denver</City>
+    <State>CO</State>
+    <ZipCode>80225</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>RE</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Brandon</FirstName>
+        <LastName>Forbes</LastName>
+        <Email>bforbes@usgs.gov</Email>
+        <Address>201 E. 9th Street</Address>
+        <State>CO</State>
+        <ZipCode>81001</ZipCode>
+        <PhoneWork>719-562-2868</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>RG</CenterCode>
+    <CenterName>New Mexico Water Science Center</CenterName>
+    <Address>6700 Edith Blvd</Address>
+    <City>Albuquerque</City>
+    <State>NM</State>
+    <ZipCode>87113</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>RG</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Mark</FirstName>
+        <LastName>Gunn</LastName>
+        <Email>mgunn@usgs.gov</Email>
+        <Address>6700 Edith Blvd NE</Address>
+        <State>NM</State>
+        <ZipCode>87113</ZipCode>
+        <PhoneWork>505-830-7903</PhoneWork>
+        <PhoneMobile>505-977-0006</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>SE</CenterCode>
+    <CenterName>Kansas Water Science Center</CenterName>
+    <Address>1217 Biltmore Drive</Address>
+    <City>Lawrence</City>
+    <State>KS</State>
+    <ZipCode>66049</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>SE</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Colin</FirstName>
+        <LastName>Painter</LastName>
+        <Email>cpainter@usgs.gov</Email>
+        <Address>1217 Biltmore Drive</Address>
+        <State>KS</State>
+        <ZipCode>66049</ZipCode>
+        <PhoneWork>785-832-3582</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>SJ</CenterCode>
+    <CenterName>Oklahoma-Texas Water Science Center</CenterName>
+    <Address>1505 Ferguson Lane</Address>
+    <City>Austin</City>
+    <State>TX</State>
+    <ZipCode>78754</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>SJ</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Timothy</FirstName>
+        <LastName>Raines</LastName>
+        <Email>thraines@usgs.gov</Email>
+        <Address>501 W. Felix Street, Bldg 24</Address>
+        <State>TX</State>
+        <ZipCode>76115</ZipCode>
+        <PhoneWork>817-253-0939</PhoneWork>
+        <PhoneMobile>817-253-0939</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>ZF</CenterCode>
+    <CenterName>Arizona Water Science Center</CenterName>
+    <Address>520 North Park</Address>
+    <City>Tucson</City>
+    <State>AZ</State>
+    <ZipCode>85719</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>ZF</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Daniel</FirstName>
+        <LastName>Evans</LastName>
+        <Email>devans@usgs.gov</Email>
+        <Address>520 N Park Ave, #221</Address>
+        <State>AZ</State>
+        <ZipCode>85719</ZipCode>
+        <PhoneWork>520-670-3311</PhoneWork>
+        <PhoneMobile>520-345-8478</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>ZK</CenterCode>
+    <CenterName>Utah Water Science Center</CenterName>
+    <Address>2329 West Orton Circle</Address>
+    <City>Salt Lake City</City>
+    <State>UT</State>
+    <ZipCode>84119-2047</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>ZK</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Ryan</FirstName>
+        <LastName>Rowland</LastName>
+        <Email>rrowland@usgs.gov</Email>
+        <Address>2329 West Orton Circle</Address>
+        <State>UT</State>
+        <ZipCode>84119</ZipCode>
+        <PhoneWork>801-908-5036</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>LF</CenterCode>
+    <CenterName>Maryland, Delaware and the District of Columbia Water Science Center</CenterName>
+    <Address>5522 Research Park Drive</Address>
+    <City>Baltimore</City>
+    <State>MD</State>
+    <ZipCode>21228</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>LF</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Charles</FirstName>
+        <LastName>Walker</LastName>
+        <Email>cwwalker@usgs.gov</Email>
+        <Address>U.S. Geological Survey, 5522 Research Park Drive</Address>
+        <State>MD</State>
+        <ZipCode>21228</ZipCode>
+        <PhoneWork>443-498-5523</PhoneWork>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>ZH</CenterCode>
+    <CenterName>Pacific Islands Water Science Center</CenterName>
+    <Address>1845 Wasp Blvd, Bld 176</Address>
+    <City>Honolulu</City>
+    <State>HI</State>
+    <ZipCode>96818</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>ZH</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Christopher</FirstName>
+        <LastName>Curran</LastName>
+        <Email>ccurran@usgs.gov</Email>
+        <Address>1845 Wasp Boulevard</Address>
+        <State>HI</State>
+        <ZipCode>96818</ZipCode>
+        <PhoneWork>808-690-9603</PhoneWork>
+        <PhoneMobile>808-445-3889</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+  <Center>
+    <CenterCode>MP</CenterCode>
+    <CenterName>South Atlantic Water Science Center</CenterName>
+    <Address>1770 Corporate Drive, Suite 500</Address>
+    <City>Norcross</City>
+    <State>GA</State>
+    <ZipCode>30093</ZipCode>
+    <CenterContacts>
+      <CenterContact>
+        <CenterCode>MP</CenterCode>
+        <Role>Hydrologic Monitoring</Role>
+        <FirstName>Whitney</FirstName>
+        <LastName>Smith</LastName>
+        <Email>wsmith@usgs.gov</Email>
+        <Address>720 Gracern Road, Suite 129</Address>
+        <State>SC</State>
+        <ZipCode>29210</ZipCode>
+        <PhoneWork>803-750-6131</PhoneWork>
+        <PhoneMobile>803-504-4033</PhoneMobile>
+      </CenterContact>
+    </CenterContacts>
+  </Center>
+</Centers>

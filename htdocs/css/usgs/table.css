@@ -1,0 +1,150 @@
+/**
+ * Namespace: table.css
+ *
+ * The file table.css is a css file to providing styling for employee table. 
+ *
+ * version 1.13
+ * November 30, 2021
+*/
+
+/*
+###############################################################################
+# Copyright (c) Office of Planning and Programming (OPP)
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+###############################################################################
+*/
+table {
+  box-sizing: content-box;
+  margin: 0.5rem;
+  padding: 0.25rem;
+  font-weight: bold;
+}
+
+table thead {
+    font-size: 0.85rem;
+    border-bottom: 2px solid black;
+}
+
+table tr {
+    border-bottom: 1px solid grey;
+}
+
+table th {
+  padding: 0.8rem;
+}
+
+table td {
+  padding: 0.5rem;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+table tbody {
+    font-size: 0.75rem;
+}
+
+caption {
+    color: black;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.95rem;
+    caption-side: top;
+    border-bottom: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.no-border {
+  border: none;
+}
+
+.counts_table {
+   margin: auto;
+   width: 60%;
+}
+
+span.counts {
+    padding: 5px;
+}
+
+
+button.dt-button {
+          margin-right: 1em;
+        }
+
+button.dt-button:hover {
+          background-color: #c2c4c3;
+          color: #000;
+        }
+
+table.fixedHeader-floating {
+    margin-top: -0.3rem;
+    margin-left: -0.10rem;
+}
+
+table.dataTable tbody tr .chosenRow {
+   border: 3px solid red!important;
+}
+
+.chosenRow {
+   color: red;
+   background-color: #e6e6e6;
+   font-weight: bold;
+}
+
+tr.warning, li.notAvailable {
+   color: red;
+}
+
+table.dataTable thead th {
+    position: relative;
+    background-image: none !important;
+}
+ 
+table.dataTable thead th.sorting:after,
+table.dataTable thead th.sorting_asc:after,
+table.dataTable thead th.sorting_desc:after {
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    display: block;
+    font-family: FontAwesome;
+}
+
+table.dataTable thead th.sorting:after {
+    content: "\f0dc";
+    color: #000;
+    font-size: 0.8em;
+    padding-top: 0.12em;
+}
+table.dataTable thead th.sorting_asc:after {
+    content: "\f0de";
+}
+table.dataTable thead th.sorting_desc:after {
+    content: "\f0dd";
+}
+
+/* Specific table elements
+*/
+
+table.stations_table {
+    width: 100%;
+}

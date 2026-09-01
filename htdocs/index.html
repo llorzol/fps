@@ -1,0 +1,283 @@
+ 
+<!DOCTYPE html> 
+
+<html lang="en"> 
+ <head> 
+  <title>Federal Priority Streamgages (FPS) Mapper</title>
+  <meta charset="utf-8"> 
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+
+   <!-- css -->
+   <!--#include virtual="DrupalVisID/includes/meta-css.html" -->
+   <!--#include virtual="includes/fps_css_inc.html" -->
+   <!-- end css -->
+        
+ </head>  
+   
+ <body id="offwhite">
+
+ <!--#include virtual="DrupalVisID/includes/header_WRET.html"-->
+
+  <!-- Container (About Section) -->         
+  <div id="about" class="container">
+
+   <!-- Page Heading/Breadcrumbs -->             
+   <div class="row"> 
+    <div class="col-sm-12"> 
+     <div class="clear title title_top">U.S. Geological Survey</div>
+     <div class="clear title title_1">
+       <a href="http://www.usgs.gov/gwsip">
+         <div class="clear title title_1">Groundwater and Streamflow Information Program</div>
+       </a>
+     </div> 
+     <div class="clear title title_2">Federal Priority Streamgages (FPS) Mapper</div>
+    </div>                 
+   </div> 
+   <!-- End Page Heading/Breadcrumbs -->             
+         
+   <div class="row spacemetop"> 
+    <div class="col-sm-9">
+      <p>The Federal Priority Streamgage (FPS) network serves as a backbone 
+	  of the greater National Streamgage Network to meet ongoing Federal 
+	  priorities for streamgage data. The network was designed to meet five 
+	  federal information needs, and 4,756 sites nationally were selected as 
+	  meeting one or more of these needs, as indicated on this mapper. These 
+	  sites are eligible for federal funding, as available. As of September 30, 
+	  2023, 3,438 of these sites were active, collecting real time streamflow 
+	  and/or water level data to meet federal needs. The FPS federal 
+	  appropriations fully-funds about one-third of these sites and partially 
+	  funds about one-fourth; with the remaining active sites receiving no FPS 
+	  funds but are funded through other means. There were 1,318 FPS-eligible 
+	  stations that were not active.
+     </p>
+     <p>The USGS launched an effort to review the FPS network priorities with
+      Federal partners in 2022, which culminated in
+      <a href="https://pubs.usgs.gov/of/2023/1032/ofr20231032.pdf" target="_blank">five updated priorities</a>
+      that were released in the spring of 2023.  A new network design based
+      upon these updated priorities will be formulated in 2024.
+     </p>
+        <ul>
+          <li>
+            <b>Water Forecasting and Operations</b>—Supply essential data used for 
+            flood alerts, flood and drought forecasts, river navigation, Federal 
+            reservoir operation, and assessment and modeling of streamflow 
+            conditions to mitigate water hazards and supply shortages and 
+            allow science-based decision making by Federal water managers.
+           </li>
+          <li>
+            <b>Boundaries, compacts, treaties and Federal lands</b>—Support 
+            interstate, international, and tribal border water agreements, compacts, 
+            court decrees, treaties and water-use/water-rights management involving 
+            Federal lands. 
+           </li>
+          <li>
+            <b>Water budget</b>—Monitor streamflow in major rivers, and water volume 
+            in key receiving waters such as the Great Lakes. 
+           </li>
+          <li>
+            <b>Long-term hydrologic trends and extremes</b>—Monitor long-term 
+            streamflow conditions associated with major land uses and ecoregions, 
+            including at springs making significant contributions to base flow in 
+            streams and in coastal-zone environments impacted by sea-level rise, to 
+            identify and track long-term hydrologic trends and support Federal 
+            water modeling and management. 
+          </li>
+          <li>
+            <b>Water quality</b>—Support Federal water-quality assessments of 
+            major rivers and estuaries, public-health risk assessment and warning 
+            relating to impaired streams and ecosystem health management on Federal 
+            lands. 
+          </li>
+        </ul>
+     <p>
+	   This mapper depicts locations, primary information goals, and funding 
+	   characteristics of the FPS network. Views can be selected for each State, 
+	   and for specific federal priorities or funding characteristics.  The 
+	   total active number of sites in the table header below represents currently 
+	   active stations and may vary over time as part of normal network operations. 
+     </p>
+    </div>
+
+    <div class="col-sm-3 spacemetop">
+      
+     <div class="card national-level">
+      <div class="card-header bg-secondary">For More Information</div>
+      <div class="card-body">
+       <div class="card-title">
+         <span><a href="https://water.usgs.gov/cgi-bin/feedback_form?bemccall@usgs.gov">Brian McCallum</a>, National Streamgage Network Coordinator (678)-924-6672</span>
+       </div>
+       <p class="card-text"><span><a href="https://water.usgs.gov/cgi-bin/feedback_form?nsip_webmaster-+NSIP+Online+Feedback+Form" title="Send your comments or questions to the USGS National Streamflow Information Program.">Contact us using our online form for feedback and questions.</a></span></p>
+       <p class="card-text"><span>For general USGS questions</span>, <a href="/contact/gsanswers?pemail=ask" title="Go to online feedback form">contact Ask USGS online</a> or call 1-888-ASK-USGS (1-888-275-8747).</p>
+      </div>
+     </div>
+      
+     <div class="card state-level" style="display:none;">
+      <div class="card-header bg-secondary">For More Information</div>
+      <div class="card-body">
+       <div class="card-title">
+        <span class="bold"><a id="contactEmail"><span id="contactName"></span></a></span>
+       </div>
+       <p class="card-text">
+            FPS Coordinator for the <span id="stateName"></span><span id="contactPhoneNumber"></span>
+       </p>
+      </div>
+     </div>
+     
+    </div>
+   </div>
+
+   <div class="row spacemetop"> 
+    <div class="col-sm-12" id="links">
+    <!--map-->
+    <div class="body-wrap">
+     <div class="container">
+      <div class="row">
+
+       <div class="col-sm-3 left_panel">
+                            
+        <div class="row spacemetop spacemebottom"> 
+         <div class="wellHeader">States and Territories</div>
+         <div id="area-selection"></div>
+        </div>
+                            
+        <div class="row spacemetop spacemebottom"> 
+         <div class="wellHeader">Site Types</div>
+         <div id="network-selection"></div>
+        </div>
+                            
+        <div class="row spacemetop spacemebottom"> 
+         <div class="wellHeader">Funding Level</div>
+         <div id="funding-selection"></div>
+        </div>
+
+        <div class="row spacemetop"> 
+        <div id="legend">
+         <p><strong>Map Legend</strong></p>
+         <ul>
+          <li>
+           <div class="valign"><img src="Symbols/Black-Circle-Hollow.gif" alt="Forecast site"></div>
+           <div class="valign">Forecast site</div>
+          </li>
+          <li>
+           <div class="valign"><img src="Symbols/Black-Square-Hollow.gif" alt="Water Quality site"></div>
+           <div class="valign">Water Quality site</div>
+          </li>
+          <li>
+           <div class="valign"><img src="Symbols/Black-Triangle-Hollow.gif" alt="Compact/Border site"></div>
+           <div class="valign">Compact/Border site</div>
+          </li>
+          <li>
+           <div class="valign"><img src="Symbols/Black-Diamond-Hollow.gif" alt="Water Availabilty site"></div>
+           <div class="valign">Water Availabilty site</div>
+          </li>
+          <li>
+           <div class="valign"><img src="Symbols/Black-Cross-Hollow.gif" alt="Sentinel site"></div>
+           <div class="valign">Sentinel site</div>
+          </li>
+          <li>
+           <div class="valign"><img src="Symbols/Black-Star-Hollow.gif" alt="Two or more of the above site types"></div>
+           <div class="valign">Two or more of the above site types</div>
+          </li>
+          <li>
+           <div class="valign full"></div>
+           <div class="valign funding">Full FPS funds</div>
+          </li>
+          <li>
+           <div class="valign partial"></div>
+           <div class="valign funding">Partial FPS funds</div>
+          </li>
+          <li>
+           <div class="valign none"></div>
+           <div class="valign funding">No FPS funds</div>
+          </li>
+          <li>
+            <div class="valign red"></div>
+            <div class="valign funding">Inactive site</div>
+          </li>
+         </ul>
+        </div>
+        </div>
+
+       </div>
+        
+       <div class="col-sm-9">
+
+        <!-- Start Leaflet Map object -->
+        <div id="maps">
+         <div id="map" class="mapState" style="display:none;"></div>
+         <div id="mapUSA" class="mapUSA clickMaps" style="display:none;"></div>
+         <span class="insertMaps" style="display:none;">
+          <span id="mapAlaska" class="mapAlaska clickMaps"></span>
+          <span id="mapHawaii" class="mapHawaii clickMaps"></span>
+          <span id="mapPuertoRico" class="mapPuertoRico clickMaps"></span>
+         </span>
+        </div> <!--end maps-->
+        <!-- End Leaflet Map object -->
+
+        <div id="countsTable" class="spacemetop"></div>
+
+       </div>
+      </div>
+     </div>
+    </div>
+   </div><!--end map--> 
+ 
+   <!-- Start sites table -->
+   <div class="row"> 
+    <div class="col-sm-1" id="links">
+    </div>
+    <div class="col-sm-10" id="links">
+     <div id="siteTable" class="spacemetop"></div>
+    </div>
+    <div class="col-sm-1" id="links">
+    </div>
+   </div><!--sites table--> 
+       
+        
+  </div>
+ </div>
+
+ <!--#include virtual="DrupalVisID/includes/footer_WRET.html"-->
+
+ <!-- Supporting scripts  -->
+ <script src="javascripts/required/jquery.min.js"></script>
+ <script src="javascripts/required/popper.min.js"></script>
+ <script src="javascripts/required/bootstrap.min.js"></script>
+ <script src="javascripts/required/jquery.url.js"></script>
+ <script src="javascripts/required/tether.min.js"></script>
+ <script src="javascripts/required/leaflet.js"></script>
+ <script src="javascripts/required/jquery.xml2json.js"></script>     
+ <script src="javascripts/required/topojson.min.js"></script>
+
+ <link rel="stylesheet" href="css/required/leaflet.zoomhome.css"/>
+ <script src="javascripts/required/leaflet.zoomhome.min.js"></script>
+
+ <!-- Supporting scripts -->
+ <!-- <script src="javascripts/required/leaflet.browser.print.min.js"></script>  -->
+  
+ <!-- Supporting scripts  -->
+ <link href="selectize/select2.min.css" rel="stylesheet" />
+ <script src="selectize/select2.min.js"></script>
+
+ <!-- Supporting scripts  -->
+ <script src="datatables/jquery.dataTables.min.js"></script>
+ <script src="datatables/dataTables.buttons.min.js"></script>
+ <script src="datatables/jszip.min.js"></script>
+ <script src="datatables/buttons.html5.min.js"></script>
+ <script src="datatables/buttons.print.min.js"></script>
+ <script src="datatables/dataTables.fixedHeader.min.js"></script>
+ <script src="datatables/dataTables.responsive.min.js"></script>
+
+ <!-- Local scripts -->
+ <script type="text/javascript" src="javascripts/gages/modal.js"></script>
+ <script type="text/javascript" src="javascripts/gages/states.js"></script>
+ <script src="javascripts/gages/datatablesSupport.js"></script>
+ <script src="data/us-states.js"></script>
+ <script src="javascripts/gages/fpsSupport.js"></script>
+ <script type="text/javascript" src="javascripts/gages/webRequest.js"></script>
+ <script type="text/javascript" src="javascripts/gages/menuSupport.js"></script>
+ <script type="text/javascript" src="javascripts/gages/map_gages.js"></script>     
+ <script type="text/javascript" src="javascripts/gages/main.js"></script>     
+ </body>     
+</html>

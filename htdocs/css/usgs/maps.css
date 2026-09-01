@@ -1,0 +1,102 @@
+/**
+ * Namespace: map.css
+ *
+ * The file popup.css is a css file to providing styling for map features. 
+ *
+ * version 1.19
+ * April 2, 2021
+*/
+
+/*
+###############################################################################
+# Copyright (c) Office of Planning and Programming (OPP)
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a
+# copy of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included
+# in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+# THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+# DEALINGS IN THE SOFTWARE.
+###############################################################################
+*/
+
+.mapState {
+   height: 650px;
+   max-width: 800px;
+   -webkit-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
+   -moz-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
+   box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
+   border: 2px solid #bbbbbb;
+   border-radius: 4px;
+}
+.mapUSA, .map {
+   height: 360px;
+   max-width: 800px;
+   -webkit-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
+   -moz-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
+   box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
+   border: 2px solid #bbbbbb;
+   border-radius: 4px;
+}
+.insertMaps {
+   display: inline-block;
+}
+.mapAlaska, .mapHawaii, .mapGuam, .mapPuertoRico {
+   display: inline-block;
+   height: 200px;
+   width: 230px;
+   -webkit-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
+   -moz-box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
+   box-shadow: 6px 6px 9px -2px rgba(120,120,120,1);
+   border: 2px solid #bbbbbb;
+   border-radius: 2px;
+   margin-bottom: 10px;
+   margin-left: 0px;
+   margin-right: 0px;
+}
+.noMap {
+   height: 0px !important;
+   width: 0px !important;
+}
+div.funding {
+   padding-left: 10px;
+}
+.full {
+   width: 10px;
+   height: 10px;
+   background: #3443eb;
+}
+.partial {
+   width: 10px;
+   height: 10px;
+   background: #1aff1a;
+}
+.none {
+   background: #b4b6cf;
+}
+.blue {
+   background: blue;
+}
+.black {
+   background: black;
+}
+.red {
+   background: red;
+}
+.orange {
+   background: orange;
+}
+.yellow {
+   background: yellow;
+}
