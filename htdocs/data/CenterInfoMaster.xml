@@ -66,10 +66,10 @@
   <Center>
     <CenterCode>MC</CenterCode>
     <CenterName>Caribbean-Florida Water Science Center</CenterName>
-    <Address>4446 Pet Ln Suite #108</Address>
-    <City>Lutz</City>
+    <Address>10770 North 46th St., Suite E700</Address>
+    <City>Tampa</City>
     <State>FL</State>
-    <ZipCode>33559</ZipCode>
+    <ZipCode>33617</ZipCode>
     <CenterContacts>
       <CenterContact>
         <CenterCode>MC</CenterCode>
@@ -77,10 +77,10 @@
         <FirstName>Kevin</FirstName>
         <LastName>Grimsley</LastName>
         <Email>kjgrims@usgs.gov</Email>
-        <Address>4446 Pet Lane, Suite 108</Address>
+        <Address>10770 North 46th Street, Suite E 700</Address>
         <State>FL</State>
-        <ZipCode>33559</ZipCode>
-        <PhoneWork>813-498-5064</PhoneWork>
+        <ZipCode>33617-3442</ZipCode>
+        <PhoneWork>813-224-5064</PhoneWork>
         <PhoneMobile>813-267-2321</PhoneMobile>
       </CenterContact>
     </CenterContacts>
@@ -118,14 +118,14 @@
       <CenterContact>
         <CenterCode>NE</CenterCode>
         <Role>Hydrologic Monitoring</Role>
-        <FirstName>Jonathan</FirstName>
-        <LastName>Lageman</LastName>
-        <Email>jlageman@usgs.gov</Email>
-        <Address>650 G Peace Road</Address>
+        <FirstName>Gary</FirstName>
+        <LastName>Johnson</LastName>
+        <Email>gjohnson@usgs.gov</Email>
+        <Address>405 N. Goodwin Avenue</Address>
         <State>IL</State>
-        <ZipCode>60115</ZipCode>
-        <PhoneWork>815-752-2035</PhoneWork>
-        <PhoneMobile>815-901-5530</PhoneMobile>
+        <ZipCode>61801</ZipCode>
+        <PhoneWork>217-328-9720</PhoneWork>
+        <PhoneMobile>217-369-1012</PhoneMobile>
       </CenterContact>
     </CenterContacts>
   </Center>
@@ -161,14 +161,13 @@
       <CenterContact>
         <CenterCode>RS</CenterCode>
         <Role>Hydrologic Monitoring</Role>
-        <FirstName>Brian</FirstName>
-        <LastName>Loving</LastName>
-        <Email>bloving@usgs.gov</Email>
-        <Address>521 Progress Circle, Suite 6</Address>
-        <State>WY</State>
-        <ZipCode>82007-9660</ZipCode>
-        <PhoneWork>307-775-9174</PhoneWork>
-        <PhoneMobile>307-630-0782</PhoneMobile>
+        <FirstName>Madison</FirstName>
+        <LastName>May</LastName>
+        <Email>mmay@usgs.gov</Email>
+        <State>MT</State>
+        <ZipCode>59601</ZipCode>
+        <PhoneWork>406-457-5900</PhoneWork>
+        <PhoneMobile>406-417-5608</PhoneMobile>
       </CenterContact>
     </CenterContacts>
   </Center>
@@ -178,7 +177,7 @@
     <Address>230 Collins Road</Address>
     <City>Boise</City>
     <State>ID</State>
-    <ZipCode>83702-4520</ZipCode>
+    <ZipCode>83702</ZipCode>
     <CenterContacts>
       <CenterContact>
         <CenterCode>YE</CenterCode>
@@ -186,10 +185,10 @@
         <FirstName>David</FirstName>
         <LastName>Evetts</LastName>
         <Email>devetts@usgs.gov</Email>
-        <Address>230 Collins Road</Address>
+        <Address>230 Collins Road, Boise</Address>
         <State>ID</State>
         <ZipCode>83702</ZipCode>
-        <PhoneWork>208-387-1316</PhoneWork>
+        <PhoneMobile>208-996-4579</PhoneMobile>
       </CenterContact>
     </CenterContacts>
   </Center>
@@ -232,7 +231,7 @@
         <Address>934 Broadway, Suite 300</Address>
         <State>WA</State>
         <ZipCode>98402</ZipCode>
-        <PhoneWork>253-552-1608</PhoneWork>
+        <PhoneWork>701-213-8694</PhoneWork>
         <PhoneMobile>701-213-8694</PhoneMobile>
       </CenterContact>
     </CenterContacts>
@@ -270,14 +269,14 @@
       <CenterContact>
         <CenterCode>LJ</CenterCode>
         <Role>Hydrologic Monitoring</Role>
-        <FirstName>Heidi</FirstName>
-        <LastName>Hoppe</LastName>
-        <Email>hhoppe@usgs.gov</Email>
+        <FirstName>Jason</FirstName>
+        <LastName>Shvanda</LastName>
+        <Email>jshvanda@usgs.gov</Email>
         <Address>3450 Princeton Pike, Suite 110</Address>
         <State>NJ</State>
         <ZipCode>08648</ZipCode>
-        <PhoneWork>609-771-3980</PhoneWork>
-        <PhoneMobile>609-273-8996</PhoneMobile>
+        <PhoneWork>609-771-3991</PhoneWork>
+        <PhoneMobile>609-273-0316</PhoneMobile>
       </CenterContact>
     </CenterContacts>
   </Center>
@@ -292,6 +291,13 @@
       <CenterContact>
         <CenterCode>LK</CenterCode>
         <Role>Hydrologic Monitoring</Role>
+        <FirstName>Guy</FirstName>
+        <LastName>Foster</LastName>
+        <Email>gfoster@usgs.gov</Email>
+        <Address>District Office - Troy, 425 Jordan Road</Address>
+        <State>NY</State>
+        <ZipCode>12180</ZipCode>
+        <PhoneWork>+15189184300x679</PhoneWork>
       </CenterContact>
     </CenterContacts>
   </Center>
@@ -313,6 +319,7 @@
         <State>PA</State>
         <ZipCode>17070</ZipCode>
         <PhoneWork>717-730-6921</PhoneWork>
+        <PhoneMobile>717-753-1678</PhoneMobile>
       </CenterContact>
     </CenterContacts>
   </Center>
@@ -392,8 +399,8 @@
         <CenterCode>ZJ</CenterCode>
         <Role>Hydrologic Monitoring</Role>
         <FirstName>Megan</FirstName>
-        <LastName>Poff</LastName>
-        <Email>mpoff@usgs.gov</Email>
+        <LastName>Rogers</LastName>
+        <Email>mrogers@usgs.gov</Email>
         <Address>500 Date Street</Address>
         <State>NV</State>
         <ZipCode>89005</ZipCode>
@@ -502,7 +509,7 @@
         <FirstName>Daniel</FirstName>
         <LastName>Evans</LastName>
         <Email>devans@usgs.gov</Email>
-        <Address>520 N Park Ave, #221</Address>
+        <Address>520 N Park Ave. Ste. 221</Address>
         <State>AZ</State>
         <ZipCode>85719</ZipCode>
         <PhoneWork>520-670-3311</PhoneWork>
@@ -566,10 +573,9 @@
         <FirstName>Christopher</FirstName>
         <LastName>Curran</LastName>
         <Email>ccurran@usgs.gov</Email>
-        <Address>1845 Wasp Boulevard</Address>
+        <Address>1845 Wasp Boulevard, Bld 176</Address>
         <State>HI</State>
         <ZipCode>96818</ZipCode>
-        <PhoneWork>808-690-9603</PhoneWork>
         <PhoneMobile>808-445-3889</PhoneMobile>
       </CenterContact>
     </CenterContacts>
